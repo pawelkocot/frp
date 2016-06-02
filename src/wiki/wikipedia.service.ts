@@ -14,6 +14,7 @@ export class WikipediaService {
 
         return this.jsonp
             .get('http://en.wikipedia.org/w/api.php', { search: params })
-            .map(request => <string[]> request.json()[1])
+            .map(result => <string[]> result.json()[1])
+            .delay(1000)
     }
 }
