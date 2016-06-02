@@ -21,13 +21,14 @@ const reducer:Reducer = (state:State, action:Action) => {
     return state;
 }
 
+//noinspection TypeScriptValidateTypes
 @Component({
     selector: 'app',
+    directives: [ListComponent, AddComponent],
     template: `
         <todo-add [store]="store"></todo-add>
         <todo-list [store]="store"></todo-list>
     `,
-    directives: [ListComponent, AddComponent]
 })
 export class AppComponent {
     private store:Store
